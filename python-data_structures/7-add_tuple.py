@@ -1,15 +1,9 @@
 #!/usr/bin/python3
-def add_tuple(a=(), b=()):
-    l1 = list(a)
-    l2 = list(b)
-    if len(l1) < 2:
-        z_list = [0 for _ in range(2 - len(l1))]
-        l1 = l1 + z_list
-    elif len(l1) > 2:
-        l1 = l1[:2]
-    i = 0
-    while i < 2:
-        l1[i] += l2[i]
-        i = i + 1
-    t = tuple(l1)
-    return t
+def add_tuple(tuple_a=(), tuple_b=()):
+    a1 = tuple_a[0] if len(tuple_a) > 0 else 0
+    a2 = tuple_a[1] if len(tuple_a) > 1 else 0
+
+    b1 = tuple_b[0] if len(tuple_b) > 0 else 0
+    b2 = tuple_b[1] if len(tuple_b) > 1 else 0
+
+    return (a1 + b1, a2 + b2) 
