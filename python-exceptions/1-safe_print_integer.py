@@ -3,6 +3,6 @@ def safe_print_integer(value):
     boole = True
     try:
         print("{:d}".format(value))
-    except ValueError:
+    except (ValueError, TypeError):
         boole = False
     return boole
