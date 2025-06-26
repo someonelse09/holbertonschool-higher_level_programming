@@ -9,12 +9,13 @@ class Rectangle:
     """
 
     number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         """ This is the initialization of the
         Rectangle class in order for us to generate an object from it """
         self.width = width
         self.height = height
-        number_of_instances += 1
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -82,4 +83,4 @@ class Rectangle:
         """ This method prints a message
         when an object of Rectangle class is deleted """
         print("Bye rectangle...")
-        number_of_instances -= 1
+        Rectangle.number_of_instances -= 1
