@@ -1,14 +1,35 @@
 >>> MyList = __import__('1-my_list').MyList
 
+# Normal positive numbers, unsorted
 >>> my_list = MyList()
 >>> my_list.append(3)
 >>> my_list.append(1)
 >>> my_list.append(2)
 >>> my_list
 [3, 1, 2]
-
 >>> my_list.print_sorted()
 [1, 2, 3]
-
 >>> my_list
 [3, 1, 2]
+
+# Check with negative numbers
+>>> neg_list = MyList()
+>>> neg_list.append(-5)
+>>> neg_list.append(3)
+>>> neg_list.append(0)
+>>> neg_list.append(-2)
+>>> neg_list
+[-5, 3, 0, -2]
+>>> neg_list.print_sorted()
+[-5, -2, 0, 3]
+>>> neg_list
+[-5, 3, 0, -2]
+
+# Check with empty list
+>>> empty_list = MyList()
+>>> empty_list
+[]
+>>> empty_list.print_sorted()
+[]
+>>> empty_list
+[]
