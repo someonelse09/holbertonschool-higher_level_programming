@@ -4,6 +4,8 @@ called Rectangle that is inherited
 from BaseGeometry class which
 has been created in the previous task """
 
+BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
 
 class Rectangle(BaseGeometry):
     """ This class includes init method and
