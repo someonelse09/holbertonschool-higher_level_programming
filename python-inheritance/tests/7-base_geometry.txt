@@ -2,29 +2,55 @@
 
 >>> bg = BaseGeometry()
 
-# Good values (should not raise)
+# ✅ Valid cases (no error)
 >>> bg.integer_validator("my_int", 12)
 >>> bg.integer_validator("width", 89)
 
-# Not an integer
+# ❌ Invalid: not int
 >>> bg.integer_validator("name", "John")
 Traceback (most recent call last):
     ...
 TypeError: name must be an integer
 
-# Zero value
+# ❌ Invalid: 0 is not > 0
 >>> bg.integer_validator("age", 0)
 Traceback (most recent call last):
     ...
 ValueError: age must be greater than 0
 
-# Negative value
+# ❌ Invalid: negative
 >>> bg.integer_validator("distance", -4)
 Traceback (most recent call last):
     ...
 ValueError: distance must be greater than 0
 
-# Area should still raise Exception
+# ✅ Required checker edge cases:
+>>> bg.integer_validator("age", (4,))
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
+
+>>> bg.integer_validator("age", [3])
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
+
+>>> bg.integer_validator("age", True)
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
+
+>>> bg.integer_validator("age", {3, 4})
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
+
+>>> bg.integer_validator("age", None)
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
+
+# Also test area() still raises Exception
 >>> bg.area()
 Traceback (most recent call last):
     ...
