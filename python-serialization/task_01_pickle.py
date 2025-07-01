@@ -27,4 +27,4 @@ class CustomObject:
             with open(filename, "rb") as file:
                 return pickle.load(file)
         except:
-            retrurn None
+            return None
