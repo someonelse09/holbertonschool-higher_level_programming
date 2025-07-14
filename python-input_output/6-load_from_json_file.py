@@ -10,4 +10,4 @@ def load_from_json_file(filename):
     do not need to manage file permissions / exceptions """
 
     with open(filename, "r", encoding="utf-8") as file:
-        json.load(file)
+        return json.load(file)
