@@ -10,4 +10,4 @@ def save_to_json_file(my_obj, filename):
     do not need to manage file permission exceptions. """
 
     with open(filename, "w", encoding="utf-8") as file:
-        return file.write(my_obj)
+        json.dump(my_obj, file)
