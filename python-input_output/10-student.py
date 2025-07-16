@@ -12,7 +12,7 @@ class Student:
         self.age = age
 
     def to_json(self, attrs=None):
-        """ This method is etrieves a dictionary representation
+        """ This method retrieves a dictionary representation
         of a Student instance such that
         if attrs is a list of strings, only attribute names contained in this
         list must be retrieved. Otherwise, all attributes must be retrieved """
